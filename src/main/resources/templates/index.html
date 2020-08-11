@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:shiro="http://www.thymeleaf.org/thymeleaf-extras-shiro">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="shortcuticon"href="../resources/favicon.ico"th:href="@{/static/favicon.ico}">
+</head>
+<body>
+    <h1>index</h1>
+    <div shiro:guest="">
+        <a href="/login" shiro:guest="">请登录</a><br>
+    </div>
+
+    <div shiro:authenticated="">
+        Welcome back,<span shiro:principal=""></span>!<br>
+        <a href="logout" >退出登录</a><br>
+    </div>
+    <div shiro:hasRole="user">
+        <a href="/user">user</a> <br/>
+    </div>
+
+    <div shiro:hasRole="admin">
+        <a href="/admin">admin</a> <br/>
+    </div>
+</body>
+</html>

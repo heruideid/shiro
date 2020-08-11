@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="shortcuticon"href="../resources/favicon.ico"th:href="@{/static/favicon.ico}">
+</head>
+<body>
+    <form action="/login" method="post">
+        <table>
+            <span th:text="${msg}"></span>
+            <tr>
+                <td>用户名:</td>
+                <td>
+                    <input type="text" name="username">
+                </td>
+            </tr>
+            <tr>
+                <td>密码:</td>
+                <td>
+                    <input type="password" name="password">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    请输入验证码:
+                </td>
+                <td>
+                    <input type="text" name="code">
+                </td>
+                <td>
+                    <img src="/getImage" alt="">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" value="登录">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

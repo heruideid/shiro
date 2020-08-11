@@ -1,0 +1,22 @@
+spring:
+  thymeleaf:
+    suffix: .html
+    prefix: classpath:/templates/
+  redis:
+#    单点配置
+#    port: 6379
+#    host: localhost
+#    database: 0
+    sentinel:
+      master: cluster1
+      nodes: 81.70.44.97:26379
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username:
+    password:
+    url: jdbc:mysql://localhost:3306/shiro2?serverTimezone=GMT
+server:
+  port: 8181
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
